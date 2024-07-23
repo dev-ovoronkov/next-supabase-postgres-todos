@@ -11,7 +11,7 @@ export default async function AuthLayout({ children }: PropsWithChildren) {
   }
 
   return (
-    <article className="flex justify-center items-center w-full h-full">
+    <article className="flex justify-center items-center w-full h-full px-4">
       {children}
     </article>
   );
