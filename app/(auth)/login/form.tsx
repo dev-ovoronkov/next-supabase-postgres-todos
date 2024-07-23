@@ -15,6 +15,8 @@ import { Input } from '@/components/ui/input';
 import { useFormState } from 'react-dom';
 import { loginUserAction } from '@/app/(auth)/login/actions';
 import FormSubmitButton from '@/components/auth/submit-button';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 
 const LoginForm = () => {
   const [{ serverErrors = [], fieldErrors = {} }, formAction] = useFormState(
@@ -28,7 +30,13 @@ const LoginForm = () => {
         <CardHeader>
           <CardTitle>Log in</CardTitle>
           <CardDescription>
-            Login into your account to get an access to your todos.
+            Don't have an account yet?{' '}
+            <Link
+              href="/register"
+              className="hover:underline text-black font-bold"
+            >
+              Create an Account
+            </Link>
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -63,7 +71,7 @@ const LoginForm = () => {
           </div>
         </CardContent>
         <CardFooter>
-          <FormSubmitButton>Continue</FormSubmitButton>
+          <FormSubmitButton>Login</FormSubmitButton>
         </CardFooter>
       </Card>
     </form>
