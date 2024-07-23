@@ -16,13 +16,9 @@ import { useFormState } from 'react-dom';
 import { loginUserAction } from '@/app/(auth)/login/actions';
 import FormSubmitButton from '@/components/auth/submit-button';
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
 
 const LoginForm = () => {
-  const [{ serverErrors = [], fieldErrors = {} }, formAction] = useFormState(
-    loginUserAction,
-    {}
-  );
+  const [{ serverErrors = [] }, formAction] = useFormState(loginUserAction, {});
 
   return (
     <form action={formAction} className="max-w-[600px] w-full">

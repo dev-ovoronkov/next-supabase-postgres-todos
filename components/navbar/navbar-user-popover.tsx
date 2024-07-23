@@ -1,6 +1,5 @@
 'use client';
 
-import { UserIdentity } from '@supabase/auth-js';
 import {
   Popover,
   PopoverContent,
@@ -17,11 +16,7 @@ import { LogOutIcon } from 'lucide-react';
 import logoutClientUser from '@/utils/user/logoutClientUser';
 import { useRouter } from 'next/navigation';
 
-interface NavbarUserPopoverProps {
-  user: UserIdentity;
-}
-
-const NavbarUserPopover = ({ user }: NavbarUserPopoverProps) => {
+const NavbarUserPopover = () => {
   const router = useRouter();
 
   const handleLogout = async () => {
