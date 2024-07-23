@@ -4,6 +4,7 @@ import { createClient } from '@/utils/supabase/server';
 import NavbarUserPopover from '@/components/navbar/navbar-user-popover';
 import Link from 'next/link';
 import NavbarUserButtons from '@/components/navbar/navbar-user-buttons';
+import { Button } from '@/components/ui/button';
 
 const Navbar = async () => {
   const client = createClient();
@@ -18,7 +19,13 @@ const Navbar = async () => {
         </Link>
 
         {userIdentities.data ? (
-          <NavbarUserPopover user={userIdentities.data.identities[0]} />
+          <div className="flex items-center gap-2">
+            <Link href="/dashboard">
+              <Button size="sm">Go to Dashboard</Button>
+            </Link>
+
+            <NavbarUserPopover />
+          </div>
         ) : (
           <NavbarUserButtons />
         )}
